@@ -1,18 +1,12 @@
 defmodule Drip do
-  @moduledoc """
-  Documentation for `Drip`.
-  """
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Drip.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    Supervisor.start_link(
+      [
+        {Drip.Supervisor, name: {:global, Drip.Supervisor}}
+      ],
+      strategy: :one_for_one
+    )
   end
 end
