@@ -8,14 +8,14 @@ defmodule Drip.Server do
   end
 
   def init(:ok) do
-    {:ok, socket} = :gen_udp.open(5569, [:binary])
+    {:ok, _socket} = :gen_udp.open(5569, [:binary])
     Logger.info("Drip.Server: udp start")
 
     {:ok, nil}
   end
 
-  def handle_info({:udp, socket, addr, port, data}, _state) do
+  def handle_info({:udp, _socket, addr, port, data}, state) do
     Logger.info("awooga #{inspect(addr)} #{inspect(port)} #{inspect(data)}")
-    {:noreply, _state}
+    {:noreply, state}
   end
 end
