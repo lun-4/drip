@@ -1,4 +1,5 @@
 %{
   "codec": {:hex, :codec, "0.1.2", "4df79b6d3f5bd5704ed86f8545ee5f578e4ffdf165ecf521f63ee405c8d9be86", [:mix], [{:private, "> 0.0.0", [hex: :private, repo: "hexpm", optional: false]}], "hexpm", "ceeb915b72ff84ea5ea35d2fb89f6533f2fe36543fe86b44e90efca60910993a"},
   "private": {:hex, :private, "0.1.1", "6227bd343bebd843e62d7bc4dba8fe970aeb0f567a33cf4249b93ef6319fa90f", [:mix], [], "hexpm", "f58264a3b092922b8ce190b728c707e699517fcad12c141e35ca9f2b826ba1b8"},
+  "remix": {:hex, :remix, "0.0.2", "f06115659d8ede8d725fae1708920ef73353a1b39efe6a232d2a38b1f2902109", [:mix], [], "hexpm", "5f5555646ed4fca83fab8620735150aa0bc408c5a17a70d28cfa7086bc6f497c"},
 }
