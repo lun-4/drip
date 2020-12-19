@@ -6,7 +6,7 @@ defmodule Drip.Protocol.Packet.Unreliable do
     <<
       length::16,
       command_type::8,
-      command_data::binary
+      payload::binary
     >>
   end
 end
@@ -22,7 +22,7 @@ defmodule Drip.Protocol.Packet.Reliable do
       nonce::16,
       length::16,
       command_type::8,
-      command_data::binary
+      payload::binary
     >>
   end
 end

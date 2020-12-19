@@ -60,7 +60,6 @@ defmodule Drip.Server do
     IO.puts(packet_type)
 
     packet_atom = Map.get(@opcode_map, packet_type)
-    IO.puts(packet_atom)
 
     if packet_atom do
       packet = packet_atom.decode(packet_rest)
@@ -73,7 +72,7 @@ defmodule Drip.Server do
 
       send_packet(socket, addr, port, ack)
     else
-      Logger.warn("unknown packet type #{packet_type}")
+      Logger.warn("unknown packet opcode #{packet_type}")
 
       packet = %Packet.Disconnect.S{
         reason: Map.get(Packet.Disconnect.reasons(), :bad_connection)

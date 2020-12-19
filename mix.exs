@@ -13,10 +13,18 @@ defmodule Drip.MixProject do
 
   # Run "mix help compile.app" to learn about applications.
   def application do
+    apps =
+      [:logger]
+      ++ if Mix.env() == :dev do
+        [:remix]
+      else
+        []
+      end
+
     [
       mod: {Drip, []},
       # TODO move remix to dev only
-      extra_applications: [:logger, :remix]
+      extra_applications: apps
     ]
   end
 
