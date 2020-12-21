@@ -19,8 +19,8 @@ defmodule Drip.Protocol.Packet.Reliable do
   make_encoder_decoder do
     <<
       # header
-      nonce::16,
-      length::16,
+      nonce::unsigned-16,
+      length::unsigned-16,
       command_type::8,
       payload::binary
     >>

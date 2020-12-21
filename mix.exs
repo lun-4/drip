@@ -14,12 +14,12 @@ defmodule Drip.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     apps =
-      [:logger]
-      ++ if Mix.env() == :dev do
-        [:remix]
-      else
-        []
-      end
+      [:logger] ++
+        if Mix.env() == :dev do
+          [:remix]
+        else
+          []
+        end
 
     [
       mod: {Drip, []},
@@ -34,6 +34,7 @@ defmodule Drip.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:codec, "~> 0.1.2"},
+      {:zigler, "~> 0.3.0", runtime: false},
       {:remix, "~> 0.0.1", only: :dev}
     ]
   end
